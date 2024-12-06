@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!--<Compile Include="LoadTxt.fs" />-->
+    <Compile Include="LoadTxt.fs" />
     <Compile Include="GUI.fs" />
   </ItemGroup>
 
