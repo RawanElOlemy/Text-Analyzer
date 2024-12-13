@@ -62,6 +62,7 @@ loadButton.Click.Add(fun _ ->
             let paragraphCount = CountParagraphs(fileContent)
             let wordFrequency = CalculateWordFrequency(fileContent) |> Seq.toList
             let mostFrequent = MostFrequentWords(fileContent) |> Seq.toList
+            let averageSentenceLen = averageSentenceLength(fileContent)
 
             // Format word frequency and most frequent words for display
             let wordFrequencyDisplay =
@@ -75,7 +76,7 @@ loadButton.Click.Add(fun _ ->
                 |> String.concat ", "
             
              // Display results in the Label
-            resultLabel.Text <- sprintf "Words: %d | Sentences: %d | Paragraphs: %d\nMost Frequent Words: %s" wordCount sentenceCount paragraphCount mostFrequentDisplay
+            resultLabel.Text <- sprintf "Words: %d | Sentences: %d | Paragraphs: %d \n Average Sentence Length: %d | Most Frequent Words: %s" wordCount sentenceCount paragraphCount averageSentenceLen mostFrequentDisplay
 
             // Populate the ListView with word frequencies
             listView.Items.Clear()
