@@ -36,3 +36,12 @@ let MostFrequentWords (text: string) =
     let wordFrequencies = CalculateWordFrequency text
     let maxFrequency = wordFrequencies |> Seq.map snd |> Seq.max
     wordFrequencies |> Seq.filter (fun (_, count) -> count = maxFrequency)
+
+
+      
+  // Average sentence length
+let averageSentenceLength (text: string) =
+    let sentences = CountSentence text
+    let totalWords = CountWord text
+    if sentences > 0 then  totalWords /  sentences else 0
+
